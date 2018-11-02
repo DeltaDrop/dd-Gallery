@@ -9,4 +9,5 @@ const GalleryContainer = () => {
   </div>)
 }
 
-ReactDom.render(<GalleryContainer/>, document.getElementById('gallery'))
+window.Gallery = ProductGallery
+// ReactDom.render(<ProductGallery/>, document.getElementById('gallery'))
