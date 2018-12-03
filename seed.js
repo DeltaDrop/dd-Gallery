@@ -1,5 +1,4 @@
 /* This script seeds the db with testData data for the Image Gallery API */
-console.log('seeding db');
 
 let db = require('./db/index.js');
 let testData = require('./server/testJson.js');
