@@ -6,7 +6,7 @@ let testData = require('./server/testJson.js');
 
 /* seed a number of cats */
 let NUM_CATS = 100;
-for(let i = 0; i < NUM_SEEDS; i++) {
+for(let i = 0; i < NUM_CATS; i++) {
   db.createProductRecord(testData.giveMeCats('testData' + i) ,(err, result) => {
     if(err) { 
       console.log('ERROR there are likely duplicate entries'); 

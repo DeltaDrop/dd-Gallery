@@ -1,4 +1,5 @@
 /* Parent of Gallery, which fetches and passes in data from the db */
+/* If no data is found it renders a 404 component */
 
 import React from 'react';
 import Gallery from './Gallery.jsx';
