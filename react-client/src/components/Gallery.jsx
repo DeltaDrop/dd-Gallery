@@ -1,8 +1,7 @@
-/*  */
+/* Gallery displays an image and handles the full screen overlay */
 
 import React from 'react';
 import GalleryOverlay from './Overlay.jsx';
-import styled from 'styled-components';
 import {
   Container,
   Image,
