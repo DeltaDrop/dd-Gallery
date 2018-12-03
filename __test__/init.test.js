@@ -1,3 +1,5 @@
+/* Tests will go here, we have set up jest for now */
+
 function sum(a, b) {
   return a + b;
 }

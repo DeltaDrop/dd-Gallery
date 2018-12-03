@@ -1,24 +1,23 @@
+/* This script seeds the db with testData data for the Image Gallery API */
 console.log('seeding db');
 
-let NUM_RECORDS = 100;
-
 let db = require('./db/index.js');
+let testData = require('./server/testJson.js');
 
-let giveMeCats = require('./server/testJson.js').giveMeCats;
-
-let test = require('./server/testJson.js');
-
-for(let i = 0; i < NUM_RECORDS; i++) {
-  db.createProductRecord(giveMeCats('test' + i) ,(err, result) => {
+/* seed a number of cats */
+let NUM_CATS = 100;
+for(let i = 0; i < NUM_SEEDS; i++) {
+  db.createProductRecord(testData.giveMeCats('testData' + i) ,(err, result) => {
     if(err) { 
       console.log('ERROR there are likely duplicate entries'); 
     } else {
-      console.log('creating product test' + i);
+      console.log('creating product testData' + i);
     }
   })
 }
 
-db.createProductRecord(test.giveMeCats('cats') ,(err, result) => {
+/* seed some animals */
+db.createProductRecord(testData.giveMeCats('cats') ,(err, result) => {
   if(err) { 
     console.log('ERROR there are likely duplicate entries'); 
   } else {
@@ -26,7 +25,7 @@ db.createProductRecord(test.giveMeCats('cats') ,(err, result) => {
   }
 })
 
-db.createProductRecord(test.giveMeDogs('dogs') ,(err, result) => {
+db.createProductRecord(testData.giveMeDogs('dogs') ,(err, result) => {
   if(err) { 
     console.log('ERROR there are likely duplicate entries'); 
   } else {
@@ -34,7 +33,8 @@ db.createProductRecord(test.giveMeDogs('dogs') ,(err, result) => {
   }
 })
 
-db.createProductRecord(test.giveMeFlashlight('flashlight') ,(err, result) => {
+/* seed actual products */
+db.createProductRecord(testData.giveMeFlashlight('flashlight') ,(err, result) => {
   if(err) { 
     console.log('ERROR there are likely duplicate entries'); 
   } else {
@@ -42,7 +42,7 @@ db.createProductRecord(test.giveMeFlashlight('flashlight') ,(err, result) => {
   }
 })
 
-db.createProductRecord(test.giveMeHeadphones('headphones') ,(err, result) => {
+db.createProductRecord(testData.giveMeHeadphones('headphones') ,(err, result) => {
   if(err) { 
     console.log('ERROR there are likely duplicate entries'); 
   } else {
@@ -50,7 +50,7 @@ db.createProductRecord(test.giveMeHeadphones('headphones') ,(err, result) => {
   }
 })
 
-db.createProductRecord(test.giveMeSeki('seki-kit') ,(err, result) => {
+db.createProductRecord(testData.giveMeSeki('seki-kit') ,(err, result) => {
   if(err) { 
     console.log('ERROR there are likely duplicate entries'); 
   } else {
@@ -58,7 +58,7 @@ db.createProductRecord(test.giveMeSeki('seki-kit') ,(err, result) => {
   }
 })
 
-db.createProductRecord(test.giveMeKeyboard('keyboard') ,(err, result) => {
+db.createProductRecord(testData.giveMeKeyboard('keyboard') ,(err, result) => {
   if(err) { 
     console.log('ERROR there are likely duplicate entries'); 
   } else {
@@ -66,7 +66,7 @@ db.createProductRecord(test.giveMeKeyboard('keyboard') ,(err, result) => {
   }
 })
 
-db.createProductRecord(test.giveMeWatches('watch') ,(err, result) => {
+db.createProductRecord(testData.giveMeWatches('watch') ,(err, result) => {
   if(err) { 
     console.log('ERROR there are likely duplicate entries'); 
   } else {
@@ -74,4 +74,5 @@ db.createProductRecord(test.giveMeWatches('watch') ,(err, result) => {
   }
 })
 
+/* A hack, change to Promise.all please */
 setTimeout(process.exit, 1000)

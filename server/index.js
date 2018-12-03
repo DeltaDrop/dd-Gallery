@@ -1,17 +1,18 @@
-let express = require('express');
-let parser = require('body-parser')
-let path = require('path')
-let cors = require('cors');
+const express = require('express');
+const parser = require('body-parser')
+const path = require('path')
+const cors = require('cors');
+const db = require('../db/index.js')
 
-
+/* Initialize Express App */
 let app = express();
 
+/* Configure Express App */
 app.use(cors());
-let db = require('../db/index.js')
-
 app.use(express.static(__dirname + '/../react-client/dist'));
-
 app.use(parser.json());
+
+/* Routes */
 
 app.get('/buy/:productName', (req, res) => {
   res.sendFile(path.resolve('react-client/dist/index.html'))
@@ -30,8 +31,7 @@ app.get('/productImages/:productName', (req,res) => {
   })
 })
 
-// use to generate test data. productName must be unique
-// find test data in testJson.js
+/* Use Test Data in testJson.js */
 app.post('/productImages', (req, res) => {
   db.createProductRecord(req.body, (err, record) => {
     if (err) {
@@ -42,6 +42,7 @@ app.post('/productImages', (req, res) => {
   });
 })
 
+/* Start Server */
 app.listen(3000, () => {
   console.log('listening on 3000')
 })

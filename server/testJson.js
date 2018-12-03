@@ -1,3 +1,5 @@
+/* This file provides test data as json for seeding the db */
+
 module.exports.giveMeFlashlight = (productName) => {
   return {
     "productName": productName,

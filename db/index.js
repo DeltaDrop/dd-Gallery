@@ -1,3 +1,4 @@
+/* This is a test db to help build out the client */
 
 let mongoose = require('mongoose');
 mongoose.connect(process.env.DB_PROVIDER || 'mongodb://127.0.0.1:27017/deltaDrop')
