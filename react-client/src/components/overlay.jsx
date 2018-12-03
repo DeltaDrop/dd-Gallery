@@ -1,3 +1,5 @@
+/* This fullscreen overlay displays product images in a carousel  */
+
 import React from 'react';
 import {
   Overlay,
