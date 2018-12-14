@@ -30,11 +30,11 @@ The app is configured to use:
 ## $ npm run seed
 
 # Running Locally
-
-## $ npm install
-## $ npm run server-dev
-## $ npm run react-dev
-
+```
+$ npm install
+$ npm run server-dev
+$ npm run react-dev
+```
 # Deployment
 
 ## Required: DB_PROVIDER env variable must be available in production enviornment, pointing to prodcution db
