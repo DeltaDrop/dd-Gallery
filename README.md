@@ -27,7 +27,9 @@ The app is configured to use:
 `databse: deltaDrop`
 `collection: products`
 
-## $ npm run seed
+```
+$ npm run seed
+```
 
 # Running Locally
 ```
