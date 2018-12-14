@@ -39,6 +39,6 @@ $ npm run react-dev
 ```
 # Deployment
 
-## Required: DB_PROVIDER env variable must be available in production enviornment, pointing to prodcution db
-### ex on ec2: ec2-instance$ export DB_PROVIDER=mongodb://<un>:<pw>@ds249583.mlab.com:49583/delta-drop
+Required: DB_PROVIDER env variable must be available in production enviornment, pointing to prodcution db
+ ex on ec2: ec2-instance$ export DB_PROVIDER=mongodb://<un>:<pw>@ds249583.mlab.com:49583/delta-drop
 
