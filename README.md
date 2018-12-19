@@ -6,7 +6,7 @@ A web service and db are provided with scripts to seed the db and serve the comp
 
 React, Node.js, MongoDB
 
-[demo video](https://www.dropbox.com/s/car3drvf8wecmhx/dd-gallery-screencap.mov?dl=0)
+[demo video](https://www.dropbox.com/s/cafa5zd62a5vj3p/carousel-overlay-demo.mov?dl=0)
 
 [gist with sample request](https://gist.github.com/benmangold/e686d23d396359a2a1314d489b799cbd)
 

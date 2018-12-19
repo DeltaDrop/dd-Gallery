@@ -1,7 +1,8 @@
 /* Gallery displays an image and handles the full screen overlay */
 
 import React from 'react';
-import GalleryOverlay from './Overlay.jsx';
+
+import GalleryOverlay from './GalleryOverlay.jsx';
 import {
   Container,
   Image,
@@ -17,11 +18,9 @@ class Gallery extends React.Component {
     this.state = {
       overlay: false,
     };
-
     this.handleImageClick = () => this.setState({ overlay: true });
     this.handleOverlayClick = () => this.setState({ overlay: false });
   }
-
   render() {
     return (
       <Container>

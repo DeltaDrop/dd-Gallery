@@ -14,6 +14,7 @@ const Overlay = styled.div`
 `;
 const CenterImage = styled.img`
   max-width: 80%;
+  max-height: 350px;
   position: relative;
   display: block;
   margin: auto;
@@ -55,6 +56,7 @@ const CarouselImage = styled.img`
   padding: 5px;
 `;
 const CarouselImageWrapper = styled.div`
+  overflow-x: scroll;
   -webkit-flex: 1;
   position: fixed;
   bottom: 3%;
@@ -77,41 +79,35 @@ const CarouselHeader = styled.div`
   height: 40px;
   margin: 0 10px 10px;
 `;
-const ButtonLeftWrapper = styled.div`
-  position: fixed;
+const Button = styled.input`
+input:focus{
+  outline: none;
+}
+z-index: 3;
+height: 10%
+position: fixed;
+display: block;
+top: 40%;
+opacity: 0.1;
 `;
 
-const ButtonRightWrapper = styled.div`
-  position: fixed;
-`;
-
-const ButtonLeft = styled.input`
-  z-index: 3;
-  height: 10%
-  float: left;
-  position: fixed;
-  display: block;
-  top: 40%;
-  left: 3%;
-  opacity: 0;
-  ${ButtonLeftWrapper}:hover & {
+const ButtonLeft = styled(Button)`
+  :hover {
     opacity: 1;
   }
+  left: 3%;
+  float: left;
 `;
-const ButtonRight = styled.input`
-  z-index: 3;
-  height: 10%
+
+const ButtonRight = styled(Button)`
   float: right;
-  position: fixed;
-  display: block;
-  top: 40%;
   left: 92%
   transform: rotate(180deg);
-  opacity: 0;
-  ${ButtonRightWrapper}:hover & {
+  :hover {
     opacity: 1;
   }
 `;
+
 const ButtonExit = styled.input`
   z-index: 3;
   height: 10%;
@@ -119,6 +115,10 @@ const ButtonExit = styled.input`
   position: fixed;
   top: 5%
   left:90%
+  opacity:.5
+  :hover {
+    opacity: 1;
+  }
 `;
 
 export {
@@ -134,8 +134,6 @@ export {
   CarouselImageWrapper,
   CarouselContainer,
   CarouselHeader,
-  ButtonLeftWrapper,
-  ButtonRightWrapper,
   ButtonLeft,
   ButtonRight,
   ButtonExit,
